@@ -30,6 +30,18 @@ public class ProductService {
 
     }
 
+    public void deleteProductById(Long id){
+        products.removeIf(product -> product.getId().equals(id));
+
+    }
+
+    public List <Product> findProductByName(String name){
+        return products
+                .stream()
+                .filter(product -> product.getName().contains(name))
+                .toList();
+    }
+
 
 
 

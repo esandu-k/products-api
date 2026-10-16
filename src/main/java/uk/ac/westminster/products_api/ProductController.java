@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -23,6 +24,15 @@ public class ProductController {
         return productService.addProduct(product);
         }
 
+    @GetMapping("/{id}")
+    public Optional<Product> getProductById(@PathVariable Long id){
+        return productService.getProductById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProductById(@PathVariable Long id){
+        productService.deleteProductById(id);
+    }
 
 }
 
