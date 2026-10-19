@@ -5,25 +5,22 @@ public class Product {
     private String name;
     private double price;
 
-    public Product(){
+    public Product() {}   // Jackson needs this
 
+    public Product(Long id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
     }
 
-    public Product (Long id, String name,double price){
-        this.id=id;
-        this.name=name;
-        this.price=price;
-    }
+    public Long getId() {
 
-    public Long getId(){
         return id;
     }
-
-    public String getName(){
+    public String getName() {
         return name;
     }
-
-    public double getPrice(){
+    public double getPrice() {
         return price;
     }
 
@@ -36,6 +33,4 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
-
-
 }
